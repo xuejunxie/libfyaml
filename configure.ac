@@ -101,7 +101,8 @@ if test "x$PTHREAD_LIBS" = "x"; then
 	PTHREAD_LIBS="-lpthread"
 fi
 
-CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+CFLAGS=" -std=c99 $CFLAGS $PTHREAD_CFLAGS" 
+# add -std=c99 to fix error: 'for' loop initial declarations are only allowed in C99 or C11 mode
 LIBS="$LIBS $PTHREAD_LIBS"
 
 # pkg-config
